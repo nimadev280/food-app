@@ -1,0 +1,250 @@
+:root {
+    /* Colours */
+    --text: #1a1a1a;
+    --muted: #666;
+    --border: #e4e4e4;
+    --accent: #2e7d32; /* placeholder, replace with your brand colour */
+
+    /* Type scale */
+    --text-sm: 14px;
+    --text-md: 16px;
+    --text-lg: 18px;
+    --text-xl: 22px;
+    --text-2xl: 32px;
+
+    /* Spacing scale (4px base) */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-6: 24px;
+    --space-8: 32px;
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    color: var(--text);
+    font-size: var(--text-md);
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 var(--space-2);
+}
+
+h2 {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin: 0 0 var(--space-4);
+}
+
+h3 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin: 0 0 var(--space-1);
+}
+
+/* Page: wider container so content fills the screen */
+.page {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: var(--space-8) var(--space-6);
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    text-align: left;
+    margin-bottom: var(--space-8);
+}
+
+.header p {
+    font-size: var(--text-sm);
+    color: var(--muted);
+    margin: 0;
+}
+
+.layout {
+    display: flex;
+    gap: var(--space-8);
+    align-items: flex-start;
+}
+
+.menu {
+    flex: 3;
+}
+
+/* Menu grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-6);
+}
+
+/* Menu cards */
+.card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    padding: var(--space-6);
+}
+
+.card-body h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 var(--space-2);
+}
+
+.desc {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--muted);
+    margin: 0 0 var(--space-4);
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border);
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Skeleton shown while the menu loads */
+.skeleton {
+    height: 340px;
+    background: #f1f1f1;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/* Empty and error states */
+.state {
+    padding: var(--space-6) 0;
+    color: var(--muted);
+}
+
+.state p {
+    margin: 0 0 var(--space-3);
+}
+
+/* Buttons */
+button {
+    font: inherit;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.card-footer button,
+.order-form button[type="submit"],
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+    border: 0;
+    padding: var(--space-3) var(--space-6);
+}
+
+.order-form button[type="submit"] {
+    width: 100%;
+}
+
+.btn-secondary {
+    background: none;
+    border: 1px solid var(--border);
+    padding: var(--space-2) var(--space-4);
+}
+
+.icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    background: none;
+    border: 1px solid var(--border);
+}
+
+/* Cart */
+.cart {
+    flex: 1;
+    min-width: 320px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: var(--space-6);
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-name {
+    flex: 1;
+}
+
+.qty {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.cart-total {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin: var(--space-6) 0 var(--space-4);
+}
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.order-form input {
+    padding: var(--space-3);
+    font: inherit;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+.message {
+    font-weight: 700;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .cart {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+}
