@@ -61,7 +61,6 @@ authRoute.post("/login", async (req, res) => {
             "+password"
         );
 
-        // Same message for "no such user" and "wrong password" so attackers can't probe emails
         const ok = user && (await bcrypt.compare(password || "", user.password));
         if (!ok) {
             return res.status(401).json({
@@ -81,7 +80,6 @@ authRoute.post("/login", async (req, res) => {
     }
 });
 
-// Called on page load to check whether the saved token is still valid
 authRoute.get("/me", requireAuth, async (req, res) => {
     try {
         const user = await User.findById(req.user.id);

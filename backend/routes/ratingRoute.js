@@ -5,7 +5,6 @@ import requireAuth from "../middleware/auth.js";
 
 const ratingRoute = Router();
 
-// Average and count per dish, used for the menu cards
 ratingRoute.get("/summary", async (req, res) => {
     try {
         const result = await Rating.aggregate([
@@ -23,7 +22,6 @@ ratingRoute.get("/summary", async (req, res) => {
     }
 });
 
-// The logged-in user's own ratings, so the UI can show what they already gave
 ratingRoute.get("/mine", requireAuth, async (req, res) => {
     try {
         const result = await Rating.find({ user: req.user.id });
@@ -33,7 +31,7 @@ ratingRoute.get("/mine", requireAuth, async (req, res) => {
     }
 });
 
-// Create or update this user's rating for one dish
+
 ratingRoute.post("/", requireAuth, async (req, res) => {
     try {
         const { food, stars } = req.body;

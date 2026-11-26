@@ -20,7 +20,7 @@ export function AuthProvider({ children }) {
         setUser(newUser);
     }, []);
 
-    // On load, check that the saved token is still valid
+   
     useEffect(() => {
         if (!token) {
             setReady(true);

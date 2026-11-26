@@ -56,7 +56,6 @@ export default function Order() {
 
                 <div className="order-layout">
                     <div>
-                        <h2>Cart</h2>
 
                         {cart.length === 0 ? (
                             <div className="empty-box">

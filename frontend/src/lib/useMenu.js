@@ -5,8 +5,8 @@ import { useAuth } from "../context/AuthContext.jsx";
 export function useMenu() {
     const { token } = useAuth();
     const [foods, setFoods] = useState([]);
-    const [ratings, setRatings] = useState({}); // { foodId: { avg, count } }
-    const [mine, setMine] = useState({});       // { foodId: stars }
+    const [ratings, setRatings] = useState({}); 
+    const [mine, setMine] = useState({});       
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
     const [notice, setNotice] = useState("");

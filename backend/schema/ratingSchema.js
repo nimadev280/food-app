@@ -9,7 +9,7 @@ const ratingSchema = new mongoose.Schema(
     { timestamps: true }
 );
 
-// A user can rate a dish once. Updating goes through the same document.
+
 ratingSchema.index({ food: 1, user: 1 }, { unique: true });
 
 const Rating = mongoose.model("Rating", ratingSchema);
