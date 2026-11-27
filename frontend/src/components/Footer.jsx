@@ -11,7 +11,7 @@ export default function Footer() {
                         <div className="brand light">
                             Tasty<span>Bites</span>
                         </div>
-                        <p className="footer-text">Freshly cooked, delivered to your door.</p>
+                        <p className="footer-text">Freshly cooked and delivered to your door.</p>
                     </div>
 
                     <div className="footer-col">
